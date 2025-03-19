@@ -15,3 +15,10 @@ mydb = mysql.connector.connect(
 print("Connected.")
 
 mycursor = mydb.cursor()
+mycursor.execute("USE laplateforme")
+
+mycursor.execute("SELECT SUM(capacite) FROM salle")
+print("Successful.")
+result = mycursor.fetchall()
+
+print("La capacité de toutes les salles est de",result[0][0])
