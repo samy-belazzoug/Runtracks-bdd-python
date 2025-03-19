@@ -10,12 +10,8 @@ db_password = os.getenv("DB_PASSWORD")
 mydb = mysql.connector.connect(
     host = db_host,
     user = db_user,
-    password = db_password)
+    password = db_password
+)
 print("Connected.")
 
 mycursor = mydb.cursor()
-mycursor.execute("USE laplateforme")
-
-mycursor.execute("SELECT * FROM etudiant")
-for x in mycursor:
-    print(x,"\n")
