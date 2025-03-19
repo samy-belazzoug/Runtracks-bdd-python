@@ -15,3 +15,9 @@ mydb = mysql.connector.connect(
 print("Connected.")
 
 mycursor = mydb.cursor()
+mycursor.execute("USE laplateforme")
+
+mycursor.execute("SELECT SUM(superficie) FROM etage")
+result = mycursor.fetchall()
+print("Successful.")
+print("La superficie de La Plateforme est de",result[0][0],"m2")
