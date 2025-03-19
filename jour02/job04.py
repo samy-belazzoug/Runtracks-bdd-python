@@ -15,3 +15,9 @@ mydb = mysql.connector.connect(
 print("Connected.")
 
 mycursor = mydb.cursor()
+mycursor.execute("USE laplateforme")
+
+mycursor.execute("SELECT nom,capacite FROM salle")
+print("Successful.")
+for x in mycursor:
+    print(x,"\n")
